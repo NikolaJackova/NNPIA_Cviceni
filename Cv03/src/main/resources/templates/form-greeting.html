@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Greeting</title>
+</head>
+<body>
+<p th:text="'Hello, ' + ${user.getName()} + '!'" />
+<p th:text="'You are ' + ${user.getAge()} + ' years old.'" />
+<a href="/form">Submit another user</a>
+<a href="/users">See all users</a>
+</body>
+</html>
