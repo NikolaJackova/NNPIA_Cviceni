@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nnpia-servlet-cv02:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>nnpia-servlet-cv02</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="nnpia-servlet-cv02-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="nnpia-servlet-cv02:war exploded" />
+    </root>
+  </artifact>
+</component>
