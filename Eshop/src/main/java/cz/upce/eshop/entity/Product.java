@@ -13,7 +13,7 @@ public class Product {
     @Column(name = "product_name")
     private String name;
 
-    @OneToMany(mappedBy = "id", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "product", fetch=FetchType.LAZY)
     private Set<OrderProduct> orderProducts;
 
     public Set<OrderProduct> getOrderProducts() {

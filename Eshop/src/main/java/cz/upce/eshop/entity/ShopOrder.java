@@ -13,7 +13,7 @@ public class ShopOrder {
     @Column(length = 20)
     private StateEnum state;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "shopOrder")
     private Set<OrderProduct> orderProducts;
 
     public Set<OrderProduct> getOrderProducts() {
