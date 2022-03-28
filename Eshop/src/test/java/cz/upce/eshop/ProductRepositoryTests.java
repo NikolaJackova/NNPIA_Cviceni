@@ -38,15 +38,15 @@ class ProductRepositoryTests {
     @Test
     void saveProductTest() {
         Product product = new Product();
-        product.setName("ProductTest");
+        product.setProductName("ProductTest");
         productRepository.save(product);
 
         List<Product> all = productRepository.findAll();
 
-        product.setName("NewProduct");
+        product.setProductName("NewProduct");
         productRepository.save(product);
-        List<Product> contains = productRepository.findProductsByNameContains("New");
-        List<Product> between = productRepository.findProductsByIdBetweenOrderByName(2L, 3L);
+        List<Product> contains = productRepository.findProductsByProductNameContains("New");
+        List<Product> between = productRepository.findProductsByIdBetweenOrderByProductName(2L, 3L);
         List<Product> sortAscById = productRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
         List<Product> sortDescById = productRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 
@@ -60,7 +60,7 @@ class ProductRepositoryTests {
     @Test
     void complexTest(){
         Product product = new Product();
-        product.setName("ProductTest");
+        product.setProductName("ProductTest");
         productRepository.save(product);
 
         ShopOrder shopOrder = new ShopOrder();

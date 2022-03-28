@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head ::htmlHead"></head>
+<body>
+<h2>Product</h2>
+<div th:replace="fragments/navigation ::navbar"></div>
+<section>
+    <h3 th:text="${product.productName}"></h3>
+    <p th:text="${product.description}"></p>
+    <img th:if="${product.image != null}" th:src="@{'data:image/png;base64,'+${image}}"/>
+</section>
+</body>
+</html>

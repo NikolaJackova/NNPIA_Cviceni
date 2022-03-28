@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head ::htmlHead"></head>
+<body>
+<h2>Product List</h2>
+<div th:replace="fragments/navigation ::navbar"></div>
+<section class="product-list">
+    <div class="product" th:each="product : ${productList}">
+        <a th:href="@{/product-detail/{id} (id=${product.getId()})}"><h3 th:text="${product.productName}"></h3></a>
+        <img th:if="${product.image != null}" th:src=""/>
+        <a class="cart-button" th:href="@{'/shopping-cart-add/' + ${product.getId()}}">+</a>
+        <a class="cart-button" th:href="@{'/shopping-cart-remove/' + ${product.getId()}}">-</a>
+    </div>
+</section>
+</body>
+</html>
