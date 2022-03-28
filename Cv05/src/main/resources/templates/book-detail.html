@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head ::htmlHead"></head>
+<body>
+<div th:replace="fragments/navigation ::navbar"></div>
+<h2>Book Detail</h2>
+<section class="container">
+    <h2 th:text="${book.name}"></h2>
+    <p th:text="${book.description}"></p>
+    <p th:text="${book.publishYear}"></p>
+    <p th:text="${book.isbn}"></p>
+    <div>
+    <h3>Authors</h3>
+        <table>
+            <thead>
+            <tr>
+                <td>Name of Author</td>
+                <td>Birth Date</td>
+            </tr>
+            </thead>
+            <tr th:each="author : ${book.bookAuthors}">
+                <td th:text="${author.getAuthor().firstName} + ' ' + ${author.getAuthor().lastName}" />
+                <td th:text="${author.getAuthor().birthDate}" />
+            </tr>
+        </table>
+    </div>
+    <div>
+    <h3>Genres</h3>
+        <table>
+        <thead>
+            <tr>
+                <td>Name of Genre</td>
+            </tr>
+        </thead>
+            <tr th:each="genre : ${book.bookGenres}">
+                <td th:text="${genre.getName()}" />
+            </tr>
+        </table>
+    </div>
+    <form action="#" th:action="@{/book-remove-process}" th:object="${book}" method="post">
+        <input type="hidden" th:field="*{bookId}" />
+        <input value="Delete" type="submit" />
+    </form>
+</section>
+</body>
+</html>

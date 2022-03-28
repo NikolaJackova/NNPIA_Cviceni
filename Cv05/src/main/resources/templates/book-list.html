@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head ::htmlHead"></head>
+<body>
+<div th:replace="fragments/navigation ::navbar"></div>
+<h2>Book List</h2>
+<section class="container">
+    <div th:each="book : ${bookList}">
+        <a th:href="@{/book-detail/{id} (id=${book.bookId})}"><h3 th:text="${book.name}"></h3></a>
+        <p th:text="${book.description}"></p>
+        <hr/>
+    </div>
+</section>
+</body>
+</html>

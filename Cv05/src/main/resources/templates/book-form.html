@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head ::htmlHead"></head>
+<body>
+<div th:replace="fragments/navigation ::navbar"></div>
+<h2>Book Form</h2>
+<section class="container">
+    <form action="#" th:action="@{/book-form-process}" th:object="${book}" method="post">
+        <input type="hidden" th:field="*{bookId}" />
+        <div class="row">
+            <div class="col-25">
+                <label>Book Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{name}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Description</label>
+            </div>
+            <div class="col-75">
+
+                <textarea type="text" th:field="*{description}"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Publish year</label>
+            </div>
+            <div class="col-75">
+                <input type="number" th:field="*{publishYear}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>ISBN</label>
+            </div>
+            <div class="col-75">
+                <input type="text" th:field="*{isbn}" />
+            </div>
+        </div>
+        <div class="row">
+            <input value="Send" type="submit" />
+        </div>
+    </form>
+</section>
+</body>
+</html>
